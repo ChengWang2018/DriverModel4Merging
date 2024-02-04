@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenSCENARIO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="OpenScenario.xsd">
+    <FileHeader description="adapt_speed_control_acc" author="C.Wang and F.W. Guo" revMajor="1" revMinor="2" date="2024-01-27T14:01:54.927954"/>
+    <ParameterDeclarations/>
+    <CatalogLocations>
+        <VehicleCatalog>
+            <Directory path="../xosc/Catalogs/Vehicles"/>
+        </VehicleCatalog>
+        <ControllerCatalog>
+            <Directory path="../xosc/Catalogs/Controllers"/>
+        </ControllerCatalog>
+    </CatalogLocations>
+    <RoadNetwork>
+        <LogicFile filepath="../scenarios/maps/merzenich_rather.xodr"/>
+    </RoadNetwork>
+    <Entities>
+        <ScenarioObject name="Agent1">
+            <Vehicle name="bus_blue" vehicleCategory="bus">
+                <ParameterDeclarations/>
+                <BoundingBox>
+                    <Center x="0.0" y="0.0" z="1.75"/>
+                    <Dimensions width="3.5358" length="18.0379" height="3.5"/>
+                </BoundingBox>
+                <Performance maxSpeed="69.0" maxDeceleration="10.0" maxAcceleration="10.0"/>
+                <Axles>
+                    <FrontAxle maxSteering="0.523598775598" wheelDiameter="0.8" trackWidth="1.68" positionX="2.98" positionZ="0.4"/>
+                    <RearAxle maxSteering="0.523598775598" wheelDiameter="0.8" trackWidth="1.68" positionX="0.0" positionZ="0.4"/>
+                </Axles>
+                <Properties>
+                    <Property name="model_id" value="6"/>
+                    <Property name="scaleMode" value="ModelToBB"/>
+                    <File filepath="../esmini/resources/models/bus_blue.osgb"/>
+                </Properties>
+            </Vehicle>
+            <ObjectController>
+                <CatalogReference catalogName="ControllerCatalog" entryName="ACCController"/>
+            </ObjectController>
+        </ScenarioObject>
+        <ScenarioObject name="Agent2">
+            <Vehicle name="bus_blue" vehicleCategory="bus">
+                <ParameterDeclarations/>
+                <BoundingBox>
+                    <Center x="0.0" y="0.0" z="1.75"/>
+                    <Dimensions width="3.316" length="14.6595" height="3.5"/>
+                </BoundingBox>
+                <Performance maxSpeed="69.0" maxDeceleration="10.0" maxAcceleration="10.0"/>
+                <Axles>
+                    <FrontAxle maxSteering="0.523598775598" wheelDiameter="0.8" trackWidth="1.68" positionX="2.98" positionZ="0.4"/>
+                    <RearAxle maxSteering="0.523598775598" wheelDiameter="0.8" trackWidth="1.68" positionX="0.0" positionZ="0.4"/>
+                </Axles>
+                <Properties>
+                    <Property name="model_id" value="6"/>
+                    <Property name="scaleMode" value="ModelToBB"/>
+                    <File filepath="../esmini/resources/models/bus_blue.osgb"/>
+                </Properties>
+            </Vehicle>
+            <ObjectController>
+                <CatalogReference catalogName="ControllerCatalog" entryName="ACCController"/>
+            </ObjectController>
+        </ScenarioObject>
+        <ScenarioObject name="Agent3">
+            <Vehicle name="bus_blue" vehicleCategory="bus">
+                <ParameterDeclarations/>
+                <BoundingBox>
+                    <Center x="0.0" y="0.0" z="1.75"/>
+                    <Dimensions width="3.2874" length="9.0909" height="3.5"/>
+                </BoundingBox>
+                <Performance maxSpeed="69.0" maxDeceleration="10.0" maxAcceleration="10.0"/>
+                <Axles>
+                    <FrontAxle maxSteering="0.523598775598" wheelDiameter="0.8" trackWidth="1.68" positionX="2.98" positionZ="0.4"/>
+                    <RearAxle maxSteering="0.523598775598" wheelDiameter="0.8" trackWidth="1.68" positionX="0.0" positionZ="0.4"/>
+                </Axles>
+                <Properties>
+                    <Property name="model_id" value="6"/>
+                    <Property name="scaleMode" value="ModelToBB"/>
+                    <File filepath="../esmini/resources/models/bus_blue.osgb"/>
+                </Properties>
+            </Vehicle>
+            <ObjectController>
+                <CatalogReference catalogName="ControllerCatalog" entryName="ACCController"/>
+            </ObjectController>
+        </ScenarioObject>
+    </Entities>
+    <Storyboard>
+        <Init>
+            <Actions>
+                <Private entityRef="Agent1">
+                    <PrivateAction>
+                        <LongitudinalAction>
+                            <SpeedAction>
+                                <SpeedActionDynamics dynamicsShape="step" value="1.0" dynamicsDimension="time"/>
+                                <SpeedActionTarget>
+                                    <AbsoluteTargetSpeed value="24.896492496307214"/>
+                                </SpeedActionTarget>
+                            </SpeedAction>
+                        </LongitudinalAction>
+                    </PrivateAction>
+                    <PrivateAction>
+                        <TeleportAction>
+                            <Position>
+                                <LanePosition roadId="4" laneId="-4" s="45.47103464031194" offset="0.0"/>
+                            </Position>
+                        </TeleportAction>
+                    </PrivateAction>
+                    <PrivateAction>
+                        <ControllerAction>
+                            <ActivateControllerAction lateral="true" longitudinal="true"/>
+                        </ControllerAction>
+                    </PrivateAction>
+                </Private>
+                <Private entityRef="Agent2">
+                    <PrivateAction>
+                        <LongitudinalAction>
+                            <SpeedAction>
+                                <SpeedActionDynamics dynamicsShape="step" value="1.0" dynamicsDimension="time"/>
+                                <SpeedActionTarget>
+                                    <AbsoluteTargetSpeed value="23.85222808830837"/>
+                                </SpeedActionTarget>
+                            </SpeedAction>
+                        </LongitudinalAction>
+                    </PrivateAction>
+                    <PrivateAction>
+                        <TeleportAction>
+                            <Position>
+                                <LanePosition roadId="4" laneId="-4" s="8.516329095281256" offset="0.0"/>
+                            </Position>
+                        </TeleportAction>
+                    </PrivateAction>
+                    <PrivateAction>
+                        <ControllerAction>
+                            <ActivateControllerAction lateral="true" longitudinal="true"/>
+                        </ControllerAction>
+                    </PrivateAction>
+                </Private>
+                <Private entityRef="Agent3">
+                    <PrivateAction>
+                        <LongitudinalAction>
+                            <SpeedAction>
+                                <SpeedActionDynamics dynamicsShape="step" value="1.0" dynamicsDimension="time"/>
+                                <SpeedActionTarget>
+                                    <AbsoluteTargetSpeed value="25.120648226069747"/>
+                                </SpeedActionTarget>
+                            </SpeedAction>
+                        </LongitudinalAction>
+                    </PrivateAction>
+                    <PrivateAction>
+                        <TeleportAction>
+                            <Position>
+                                <LanePosition roadId="9" laneId="-4" s="11.24856431258394" offset="0.0"/>
+                            </Position>
+                        </TeleportAction>
+                    </PrivateAction>
+                    <PrivateAction>
+                        <ControllerAction>
+                            <ActivateControllerAction lateral="true" longitudinal="true"/>
+                        </ControllerAction>
+                    </PrivateAction>
+                </Private>
+            </Actions>
+        </Init>
+        <Story name="story_act_empty">
+            <ParameterDeclarations/>
+            <Act name="act_empty">
+                <ManeuverGroup name="empty" maximumExecutionCount="1">
+                    <Actors selectTriggeringEntities="false"/>
+                </ManeuverGroup>
+                <StartTrigger/>
+                <StopTrigger/>
+            </Act>
+        </Story>
+        <StopTrigger/>
+    </Storyboard>
+</OpenSCENARIO>

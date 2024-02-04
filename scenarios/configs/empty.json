@@ -1,0 +1,76 @@
+{
+    "data_format": "exitd",
+    "data_root": "scenarios/data/exitd",
+    "episodes": [
+        {
+            "recording_id": ""
+        }
+    ],
+    "opendrive_file": "scenarios/maps/merzenich_rather.xodr",
+    "scenario": {
+        "map_path": "scenarios/maps/merzenich_rather.xodr",
+        "max_speed": 40,
+        "fps": 20,
+        "seed": 21,
+        "max_steps": 100
+    },
+    "agents": [
+        {
+            "id": 0,
+            "exid_id": 184,
+            "type": "MCTSAgent",
+            "spawn": {
+                "box": {
+                    "center": [
+                        228.3401,
+                        -195.3912
+                    ],
+                    "length": 7.0554,
+                    "width": 2.9783,
+                    "heading": 6.1026711386335695
+                },
+                "velocity": [
+                    20.7258,
+                    20.7258
+                ]
+            },
+            "goal": {
+                "box": {
+                    "center": [
+                        594.8464,
+                        -213.4332
+                    ],
+                    "length": 5.0,
+                    "width": 15.0,
+                    "heading": 6.145824404389129
+                }
+            },
+            "cost_factors": {
+                "time": 3.0,
+                "velocity": 0.0,
+                "acceleration": 0.1,
+                "jerk": 0.1,
+                "heading": 0.0,
+                "angular_velocity": 0.1,
+                "angular_acceleration": 0.1,
+                "curvature": 0.0,
+                "safety": 0.0
+            },
+            "mcts": {
+                "t_update": 2.0,
+                "n_simulations": 30,
+                "store_results": "",
+                "trajectory_agents": false,
+                "reward_factors": {
+                    "time": 1.0,
+                    "jerk": -0.2,
+                    "angular_velocity": -0.05,
+                    "curvature": 0.0,
+                    "coll": 1.0,
+                    "safety": 1.0
+                }
+            },
+            "view_radius": 500
+        }
+    ]
+}

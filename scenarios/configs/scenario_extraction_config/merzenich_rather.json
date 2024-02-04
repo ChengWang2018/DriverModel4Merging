@@ -1,0 +1,18 @@
+{
+    "exid_data_root": "../scenarios/exid_raw_data/data/",
+    "merging_start_lanelet_id": {
+        "0": "1904",
+        "6": "1514"
+    },
+    "merging_target_lanelet_id": {
+        "6": ["1454", "1459", "1463", "1467", "1472"]
+    },
+    "recording_fps" : 25,
+    "observation_window_after_lane_change" : 2.0,
+    "valid_lane_change_threshold" : 0.5,
+    "odr_file_path": "../scenarios/maps/merzenich_rather.xodr",
+    "scenario_config_output_path": "../scenarios/configs",
+    "scenario_data_output_path": "../scenarios/data/exitd",
+    "recording_begin": 78,
+    "recording_end": 92
+}

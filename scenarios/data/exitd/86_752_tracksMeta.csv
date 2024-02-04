@@ -1,0 +1,4 @@
+recordingId,trackId,initialFrame,finalFrame,numFrames,width,length,class,originalTrackId
+86,1,15766,15984,218,3.6913,18.311,truck,747
+86,0,15766,16006,240,2.6106,6.9936,van,752
+86,2,15766,16006,240,3.443,18.8949,truck,754

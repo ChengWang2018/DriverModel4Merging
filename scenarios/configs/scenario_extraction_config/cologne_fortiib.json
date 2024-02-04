@@ -1,0 +1,72 @@
+{
+  "data_format": "exitd",
+  "data_root": "scenarios/data/exitd",
+  "episodes": [
+    {"recording_id":  "78"}
+  ],
+  "opendrive_file": "scenarios/maps/cologne_fortiib.xodr",
+
+  "scenario": {
+    "map_path": "scenarios/maps/cologne_fortiib.xodr",
+    "max_speed": 63.89,
+    "fps": 20,
+    "seed": 21,
+    "max_steps": 1000
+  },
+  "agents": [
+  {
+      "id": 0,
+      "type": "MCTSAgent",
+      "spawn": {
+          "box": {
+              "center": [
+                  195.2913,
+                  -187.6885
+              ],
+              "length": 5.3059,
+              "width": 2.1109,
+              "heading": 6.106297932819213
+          },
+          "velocity": [
+              18,
+              19
+          ]
+      },
+      "goal": {
+          "box": {
+              "center": [
+                  608.6618,
+                  -214.4974
+              ],
+              "length": 5.3059,
+              "width": 2.1109,
+              "heading": 0.1189930577424694
+          }
+      },
+      "cost_factors": {
+        "time": 0.5,
+        "velocity": 0.0,
+        "acceleration": 0.0,
+        "jerk": 1.0,
+        "heading": 0.0,
+        "angular_velocity": 0.0,
+        "angular_acceleration": 0.0,
+        "curvature": 0.0,
+        "safety": 0.0
+      },
+      "mcts": {
+        "t_update": 2.0,
+        "n_simulations": 30,
+        "store_results": "all",
+        "trajectory_agents": false,
+        "reward_factors": {
+          "time": 1.0,
+          "jerk": -1.0,
+          "angular_velocity": -0.1,
+          "curvature": 0.0
+        }
+      },
+      "view_radius": 500
+    }
+  ]
+}
