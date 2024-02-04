@@ -1,5 +1,5 @@
 # CCDM2
-This repository is for creating a careful and competent driver model for merging scenarios for safety assessment of autonomous vehicles. We combined Monte Carlo Tree Search (MCTS) with Model Predictive Control (MPC) to create a risk-aware, capability-dominant and interpretable driver model. 
+This repository is for creating a Careful and Competent Driver Model for Merging (CCDM2) scenarios for safety assessment of autonomous vehicles. We combined Monte Carlo Tree Search (MCTS) with Model Predictive Control (MPC) to create a risk-aware, capability-dominant and interpretable driver model. 
 
 ## Description
 1, The extracted challenging merging scenarios under `\xosc` from the [ExiD](https://levelxdata.com/exid-dataset/) dataset are stored with OpenScenario format, which can be loaded by commonly used simulators, such as esmini. The extracted scenarios with the same format as ExitD are stored under `\scenarios\data`.
